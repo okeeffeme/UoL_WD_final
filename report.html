@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="The project report">
+    <meta name="author" content="M. O'Keeffe">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>CM1040 Web Dev | Report</title>
+    <!-- Code from fonts.google.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- End code from fonts.google.com -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <h1>CM1040 Web Dev | Report</h1>
+    <main>
+        <aside>
+            <nav>
+                <h2>Table of contents</h2>
+                <a href="#intro">Introduction</a>
+                <a href="#inspiration">Inspiration</a>
+                <a href="#accessibility">Accessibility</a>
+                <a href="#usability">Usability</a>
+                <a href="#learning">Learning</a>
+                <a href="#evaluation-1">Evaluation I</a>
+                <a href="#evaluation-2">Evaluation II</a>
+                <a href="#resources">Resources</a>
+                <a href="#appendices">Appendices</a>
+            </nav>
+        </aside>
+        <article>
+            <a id="intro"><h2>Introduction</h2></a>
+            <blockquote>What is the essential story being told by your portfolio site? Describe the version of you that it is about.</blockquote>
+            
+            <p>In 2034, ghosts are an epidemic haunting homes and businesses. Systems have been put into place to identify and expunge these otherworldly presences.</p>
+            <p>NameTBD is a ghost identification specialist, licensed thru Ghost Investigators and Graveyard Scouts (GIGS).</p>
+            
+            <blockquote>What is the audience you are addressing? What type of structure did you choose to implement?</blockquote>
+            <p>Vistors to the site will be in need of help with their ghost-related problems. They'll be looking for quick, reliable help to resolve their hauntings.</p>
+            <p>To assure the visitor on NameTBD's reliablity, links to accreditation and affidavits will be avalible. Successfully solved cases will be displayed, alongside GIGS mandated reports. The site will offer a reprive from the terror of otherworldly encounters by offering a light-hearted reminder that hauntings are now commonplace.</p>
+            
+            <figure class="comic">
+            <img src="assets/pocketss_1.jpg" alt="">
+            <img src="assets/pocketss_2.jpg" alt="">
+            <img src="assets/pocketss_3.jpg" alt="">
+            <img src="assets/pocketss_4.jpg" alt="">
+            <figcaption>Pocketss <cite><a href="https://twitter.com/_pocketss/status/1410640623359729665">@_pocketss</a></cite></figcaption>
+            </figure>
+            
+            <a id="inspiration"><h2>Inspiration</h2></a>
+            <blockquote>State 3 professional portfolio sites (not advices articles or portfolio templates) that have inspired you when
+                creating your website. What did you learn from them?</blockquote>
+            <ol>
+                <li>
+                    <h3>Lynn Fisher</h3>
+                    <a href="https://lynnandtonic.com/"><h4>lynnandtonic.com</h4></a>
+                    <p>I've been a long-time fan of Lynn Fisher, and frequently reference her project 'A Single Div'. Fisher updates her portfolio about once a year; the site is, in itself, a showcase of her CSS ability.</p>
+                    <h4>Main Nav</h4>
+                    <ul>
+                        <li><h5>Home</h5><p> Be sure to resize your browser</p></li>
+                        <li><h5>Work</h5><p> Gallery of work and projects</p></li>
+                        <li><h5>About</h5><p> Self described, includes links to interviews and published talks</p></li>
+                        <li><h5>Thoughts</h5><p> Blog posts in decending post order</p></li>
+                        <li><h5>Archive</h5><p> Previous iterations of the site</p></li>
+                        <li><h5>Dark/Light Mode Toggle</h5></li>
+                    </ul>
+                    <h4>Footer Nav</h4>
+                    <ul>
+                        <li><h5>Email</h5></li>
+                        <li><h5>Shop</h5></li>
+                        <li><h5>Gifs</h5></li>
+                        <li><h5>RSS Feed</h5></li>
+                        <li><h5>Blog</h5></li>
+                        <li><h5>Twitter Archive</h5></li>
+                        <li><h5>Mastodon</h5></li>
+                        <li><h5>GitHub</h5></li>
+                        <li><h5>Codepen</h5></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Joshua Comeau</h3>
+                    <a href="https://www.joshwcomeau.com/"><h4>joshwcomeau.com</h4></a>
+                    <p>Josh is a great developer, and I use his CSS reset almost exlusively. His personal portfolio site is a bit of an outlier, as it focuses mainly on his tutorials and articles with very little about himself (although some of his content does focus on himself and his personal experiences).</p>
+                    <h4>Main Nav</h4>
+                    <ul>
+                        <li><h5>Home</h5><p></li>
+                        <li><h5>Latest</h5><p> Blog posts in decending post order</p></li>
+                        <li><h5>Posts</h5><p> Blog posts in categories</p></li>
+                        <li><h5>Goodies</h5><p> Helpers like snippets, gradient generator, and shadow generator</p></li>
+                        <li><h5>Courses</h5><p> An overview of the courses Josh has published</p></li>
+                        <li><h5>Dark/Light Mode Toggle</h5></li>
+                        <li><h5>Disable Sounds</h5></li>
+                        <li><h5>RSS Feed</h5></li>
+                    </ul>
+                    <h4>Footer Nav</h4>
+                    <ul>
+                        <li><h5>Copyright</h5></li>
+                        <li><h5>Tutorials</h5><p>A list of Josh's most common tutorial categories: React, CSS, Javascript, etc.</p></li>
+                        <li><h5>Links</h5><p>Legal links relevant to Josh's tutorial site and his Twitter</p></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Dave Rupert</h3>
+                    <a href="https://daverupert.com/"><h4>daverupert.com</h4></a>
+                    <p>I'm familiar with Dave thru the podcast Shoptalk, but I hadn't checked out his personal site before this. I'm pretty pleased that I did, I didn't know he wrote short scifi!</p>
+                    <h4>Main Nav</h4>
+                    <ul>
+                        <li><h5>Home</h5><p> Gallery of work and projects</p></li>
+                        <li><h5>About</h5><p> Self described, includes links to interviews and published work, likes and gear, and support</p></li>
+                        <li><h5>Archives</h5><p> Blog posts with filtering via tags</p></li>
+                        <li><h5>Bookshelf</h5><p> What Dave's been reading</p></li>
+                        <li><h5>Projects</h5><p> Gallery of work and projects</p></li>
+                        <li><h5>Stories</h5><p> Dave's short scifi</p></li>
+                        <li><h5>RSS Feed</h5></li>
+                    </ul>
+                    <h4>Footer Nav</h4>
+                    <ul>
+                        <li><h5>Copyright</h5></li>
+                        <li><h5>Mastodon</h5></li>
+                        <li><h5>Twitter</h5></li>
+                        <li><h5>GitHub</h5></li>
+                    </ul>
+                </li>
+            </ol>
+            <h3>Takeaways</h3>
+            <ul>
+                <li>
+                    <h4>Blogs</h4>
+                    <p>Everyone is blogging. Each site includes a RSS feed, and there's a good number of posts on each site within the past year. Subject matter is a mixture of professional and personal interest.</p>
+                </li>
+                <li>
+                    <h4><s>All</s> About Me</h4>
+                    <p>The 'About' sections were less of a CV, and more of an overview of interests and published work (or talks). Josh forwent an 'About' section entirely.</p>
+                </li>
+                <li>
+                    <h4>Cool tidbits</h4>
+                    <p>Each author's personality is showcased on their site. There are cute additions like Josh's avatar popping out from the side. Dave has a 'Star Wars crawl' inspired landing page, and has included his current reading list in the topline navigation. Lynn's entire site is just cool CSS. She also has a shop for her designs, and a page specifically for CSS gifs she's created.</p>
+                </li>
+            </ul>
+            
+            <p>I am definitely straying a bit from a developer's website with my chosen persona. Because of the nature of my fantastical subject matter, I will aim to incorporate these findings but also focus on the report's prompt of 'What is the audience you are addressing?'</p>
+            <a id="accessibility"><h2>Accessibility</h2></a>
+            <blockquote>State 3 ways in which your site is accessible.</blockquote>
+            <p>I'll be focusing on clear, keyboard driven navigation, semantic html with media descriptions, and toggles for animations.</p>
+            <a id="usability"><h2>Usability</h2></a>
+            <blockquote>State 3 ways in which you considered the usability of your site.</blockquote>
+            <p>I've considered the target audience's main goals will be to contact NameTBD, validate NameTBD's accreditation and competence, and find solace in other cases that were resolved. All of these motivators will be addressed via top level navigation.</p>
+            <p>In looking at Josh's site, I found the HTML structure of his blog posts fantastic. Each post title is a h1 tag, each article has a table of contents in an aside, each subheader has an anchor. I am directly referencing his layout when designing my own.</p>
+            <a id="learning"><h2>Learning</h2></a>
+            <blockquote>State 3 things you had to learn or find out to create your site. How did you achieve that?</blockquote>
+            
+            <p>There were several components where I wanted to guarantee that the HTML was both the most semantically correct <em>and</em> accessible. Quotations and testimonials, for example, are not components that I've used frequently. My go-to for most component compositions is <a href="">CSS Tricks</a>, and <a href="https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/">this article by John Rhea</a> provided good insight into best practice.</p>
+            <a id="evaluation-1"><h2>Evaluation I</h2></a>
+            <blockquote>What aspects of your work do you think were particularly successful? Why?</blockquote>
+            <a id="evaluation-2"><h2>Evaluation II</h2></a>
+            <blockquote>What aspects of your work could be improved? How might you do things
+                differently another time?</blockquote>
+            <a id="resources"><h2>Resources</h2></a>
+            <blockquote>What resources did you use in your work? List any sources of information, libraries, plugins, code or tools (you
+                should also indicate inclusions from other sources within your code using comments)</blockquote>
+            <a id="appendices"><h2>Appendices</h2></a>
+            <blockquote>Site map (if useful), wireframes and mock-ups</blockquote>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <ul>
+                    <li>Accreditation</li>
+                    <li>Example Case</li>
+                    <li>Testimonals</li>
+                </ul>
+                <li>Case Reports</li>
+                <ul>
+                    <li>Individual Case</li>
+                    <dl>
+                        <dt>Case title</dt>
+                        <dd>Case address/date</dd>
+                        <dd>Link to case report</dd>
+                        <dd>Evidence presented</dd>
+                        <dd>Ghost type</dd>
+                    </dl>
+                </ul>
+                <li>Blog</li>
+                <ul>
+                    <li>Ghost types</li>
+                    <li>Common signs</li>
+                    <li>Example Case</li>
+                </ul>
+                <li>Quick ID</li>
+            </ul>
+            <a href="https://toolness.github.io/accessible-color-matrix/?n=highlight&n=white&n=low%20contrast&n=high%20contrast&n=alt%20high%20contrast&n=black&v=E2EF70&v=EBF5EE&v=B9BAA3&v=37392E&v=421821&v=0A100D" target="_blank">Colour Palette</a>
+            <img src="assets/accessible-color-matrix.png" alt="A matrix of the suggested colour palette and their AA accessibile combinations" loading="lazy">
+            <figure class="polaroid">
+                <img src="assets/jeniak.jpg" alt="Example ghost hunting equipment, visual inspiration" loading="lazy"/>
+                <figcaption>Phasmaphobia fan art by Jeniak</figcaption>
+              </figure>
+              <figure>
+                <div class='ghost-a'>fig. a</div>
+                <div class='ghost-b'>fig. b</div>
+                <figcaption>Some 'Single Div' ghost designs I created for the site, inspired by Lynn Fisher's 2022.09.08 #divtober entry</figcaption>
+              </figure>
+        </article>
+    </main>
+</body>
+</html>
