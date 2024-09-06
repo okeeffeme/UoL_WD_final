@@ -5,26 +5,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener('change', (e) => {
-            currentSelection = e.target.checked ? 
-            currentSelection.add(e.target.name) : 
-            currentSelection.delete(e.target.name);
-            console.log(typeof currentSelection, currentSelection)
+            //cannot use ternary op., Set.delete() returns bool
+            if(e.target.checked) {
+                currentSelection.add(e.target.name) 
+            } else {
+                currentSelection.delete(e.target.name);
+            }
             togglePost(currentSelection)
         })
     })
 
     function togglePost(currentSelection) {
-        console.log(typeof currentSelection, currentSelection)
-        currentSelection.forEach((current) => {
-            //must use for loop, HTMLCollection does not have forEach
+        if (currentSelection.size == 0) { // if no filter selected, display all
             for (let i = 0; i < posts.length; i++) {
-                if (posts[i].id.includes(current)) {
-                    posts[i].style.backgroundColor = 'green';
-                } else {
-                    posts[i].style.backgroundColor = 'red';
-                    // posts[i].style.display = '';
-                }
+                posts[i].style.display = '';
             }
-        })
+        } else {
+            //must use for loop, HTMLCollection does not have forEach
+            for (let i = 0; i < posts.length; i++) { // hide all
+                posts[i].style.display = 'none';
+            }
+            currentSelection.forEach((current) => { // display matching
+                for (let i = 0; i < posts.length; i++) {
+                    if (posts[i].id.includes(current)) {
+                        posts[i].style.display = '';
+                    }
+                }
+            })
+        }
     }
   });   
