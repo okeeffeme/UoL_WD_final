@@ -1,17 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     const checkboxes = document.querySelectorAll('form[id=testForm]>input[type=checkbox]');
+    const clear = document.querySelector('form[id=testForm]>button[type=button][id=clearAll]');
     const posts = document.getElementsByClassName('post');
     let currentSelection = new Set();
+
+    clear.addEventListener('click', () => {
+        currentSelection.clear();
+        checkboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+        })
+        togglePost(currentSelection);
+    })
 
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener('change', (e) => {
             //cannot use ternary op., Set.delete() returns bool
             if(e.target.checked) {
-                currentSelection.add(e.target.name) 
+                currentSelection.add(e.target.name); 
             } else {
                 currentSelection.delete(e.target.name);
             }
-            togglePost(currentSelection)
+            togglePost(currentSelection);
         })
     })
 
