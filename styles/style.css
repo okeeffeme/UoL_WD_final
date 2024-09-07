@@ -55,7 +55,6 @@ main {
     max-width: 80vw;
     display: flex;
     flex-direction: column;
-    background-color: #421821;
     margin: auto;
 }
 
@@ -77,6 +76,17 @@ figcaption {
     width: 100%;
     text-align: center;
     padding: 12px;
+}
+
+figure.comic {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: fit-content;
+    gap:0;
+}
+
+figure.comic img {
+    min-width: 250px;
 }
 
 figure.polaroid {
@@ -248,7 +258,25 @@ li > :is(h3, h4):has(+ p, + a), li a > :is(h3, h4, p) {
     margin: 0;
 }
 
-div {
+/* Columns */
+
+[class*="col"] {
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    height: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+[class*="col"] > :is(h1, h2, h3, h4, h5, h6) {
+    color: blue;
+    width: 100%;
+}
+
+[class*="col"] > a {
     border:1px solid var(--c-highcontrast);
     display: flex;
     min-height: 200px;   
@@ -258,27 +286,26 @@ div {
     align-items:center;
 }
 
-[class*="col"] {
-    display: flex;
-    width: 100%;
-    min-height: 200px;
-    height: fit-content;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-[class*="col"] > :is(h1, h2, h3, h4, h5, h6) {
-    color: blue;
-    width: 100%;
-}
-
 @media (width <= 700px) {
     [class*="col"] {
         flex-direction: column;
     }
 }
 
+/* Forms */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form span.checkbox {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Header and Navigation */
 header {
     position: relative;
     display: flex;
@@ -298,21 +325,10 @@ nav ul {
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
-
 }
 
-.ribbon {
-    height: 4rem;
-    width: 100vw;
-    position: relative;
-    left: -10vw;
-}
-
-@media (width <= 500px) {
-    .ribbon {
-        width: 100%;
-        position:unset;
-    }
+nav ul li:not(:last-child) {
+    padding-right: .4rem;
 }
 
 
