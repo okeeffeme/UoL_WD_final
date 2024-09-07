@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     //get params from script tag
-    const formID = document.getElementById("filter-script").getAttribute("data-form") || 'filterForm';
-    const filterable = document.getElementById("filter-script").getAttribute("data-filterable");
+    //script ID MUST be 'filter-script' for custom props to work
+    const formID = document.getElementById("filter-script").getAttribute("data-form") || 'filter-form';
+    const filterable = document.getElementById("filter-script").getAttribute("data-filterable") || 'post-preview';
     //exclusive or inclusive filtering
     const isExcludeMode = document.getElementById("filter-script").getAttribute("data-exclude") ? true : false;
 
