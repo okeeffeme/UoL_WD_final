@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="The project report">
-    <meta name="keywords" content="Themepark, Roller coasters, Adventure park, Waterpark">
-    <meta name="author" content="M. O'Keeffe">
+    <meta name="description" content="Case Reports">
+    <meta name="keywords" content="ghosts, blog, GIGS, NameTBD">
+    <meta name="author" content="NameTBD">
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
-    <title>GIGS | Home</title>
+    <title>NameTBD | Case Reports</title>
     <!-- Code from fonts.google.com -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <!-- End code from fonts.google.com -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="filter.js"></script>
+    <script id="filter-script" data-form="filterForm" data-filterable="post-preview" src="./assets/js/filter.js"></script>
 </head>
 
 <body>
@@ -29,13 +29,13 @@
                 <li><a href="">About</a></li>
                 <li><a href="./cases.html">Case Reports</a></li>
                 <li><a href="./blog_template.html">Blog</a></li>
-                <li><a href="">Quick ID</a></li>
+                <li><a href="./quickID.html">Quick ID</a></li>
             </ul>    
         </nav>
     </header>
     <main>
     <div class="col-1 ribbon">
-        <form id="testForm">
+        <form id="filterForm">
             <input type="checkbox" name="a" id="a">
             <label for="a">Test toggle a</label>
             <input type="checkbox" name="b" id="b">
@@ -46,30 +46,31 @@
         </form>
     </div>
     <div class="posts-container">
-        <div class="post" id="a">
+        <!-- Custom HTML element, post -->
+        <div class="post-preview" id="000100" data-tags="a">
+            <article>
+                <h2>Case #000100</h2>
+                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
+                <p>Read More</p>
+            </article>
+        </div>
+        <div class="post-preview" id="000101" data-tags="b">
+            <article>
+                <h2>Case #000101</h2>
+                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
+                <p>Read More</p>
+            </article>
+        </div>
+        <div class="post-preview" id="000102" data-tags="c">
             <article>
                 <h2>Case #000102</h2>
                 <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
                 <p>Read More</p>
             </article>
         </div>
-        <div class="post" id="b">
+        <div class="post-preview" id="000103" data-tags="a b c" >
             <article>
-                <h2>Case #000102</h2>
-                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
-                <p>Read More</p>
-            </article>
-        </div>
-        <div class="post" id="c">
-            <article>
-                <h2>Case #000102</h2>
-                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
-                <p>Read More</p>
-            </article>
-        </div>
-        <div class="post" id="a b c" >
-            <article>
-                <h2>Case #000102</h2>
+                <h2>Case #000103</h2>
                 <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
                 <p>Read More</p>
             </article>

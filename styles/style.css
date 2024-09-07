@@ -51,10 +51,12 @@ body {
 }
 
 main {
-    min-width: 0;
+    min-width: 400px;
+    max-width: 80vw;
     display: flex;
     flex-direction: column;
     background-color: #421821;
+    margin: auto;
 }
 
 /* Figure Styling */
@@ -108,7 +110,10 @@ figure.polaroid figcaption{
     }
   }
 
-div.post {
+/* Post previews */
+div.post-preview {
+    align-self: center;
+    justify-self: center;
     border: 1px solid var(--c-highcontrast-1);
     min-width: 300px;
     max-width: 400px;
@@ -116,23 +121,24 @@ div.post {
     background-color: var(--c-lowcontrast);
 }
 
-.post article {
+.post-preview article {
     width: 100%;
     padding: 10px 30px;
 }
 
 /* Article Styling */
 
-main:has(article) {
+main.post {
     margin: auto;
     min-width: 400px;
     max-width: 80vw;
     display: flex;
+    flex-direction: row;
     flex: 1 2 auto;
     gap: 20px;
 }
 
-main:has(article) > aside {
+main.post > aside {
     position: sticky;
     top: -1px;
     align-self: flex-start;
@@ -140,13 +146,13 @@ main:has(article) > aside {
 }
 
 
-main:has(article) > aside > nav {
+main.post > aside > nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-main:has(article) > aside > nav > :is(h1,h2,h3,h4,h5,h6) {
+main.post > aside > nav > :is(h1,h2,h3,h4,h5,h6) {
     background: none;
     text-align: left;
     padding: 1rem 0;
@@ -158,9 +164,22 @@ main:has(article) > aside > nav > :is(h1,h2,h3,h4,h5,h6) {
     border-bottom: 1px solid var(--c-black);
 }
 
-article {
+article.post {
     max-width: 50vw;
     min-width: 400px;
+    margin: auto;
+}
+
+.chapter-title {
+    width: 100%;
+    display: flex;
+}
+
+.page-turn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 /* Quotes and Citations */
