@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //exclusive or inclusive filtering
     const isExcludeMode = document.getElementById("filter-script").getAttribute("data-exclude") ? true : false;
 
-    const checkboxes = document.querySelectorAll(`form[id=${formID}]>input[type=checkbox]`);
+    const checkboxes = document.querySelectorAll(`form[id=${formID}]>span>input[type=checkbox]`);
     const clear = document.querySelector(`form[id=${formID}]>button[type=button][id=clearAll]`);
     const posts = document.getElementsByClassName(filterable);
     let currentSelection = new Set();
-
+    console.log(checkboxes)
     // clear all selected filters
     clear.addEventListener('click', () => {
         currentSelection.clear();

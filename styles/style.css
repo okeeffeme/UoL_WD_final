@@ -45,6 +45,7 @@ body {
     margin: auto;
     min-width: 300px;
     max-width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
     font-size: var(--fontsize);
     line-height: calc(var(--fontsize)*1.5);
@@ -57,6 +58,19 @@ main {
     flex-direction: column;
     margin: auto;
 }
+
+a {
+    font-weight: 600;
+    color: var(--c-palette-1);
+}
+a:visited {
+    color: var(--c-highcontrast);
+}
+a:hover, a:focus, a:active {
+    color: var(--c-black);
+    background-color: var(--c-highlight);
+}
+
 
 /* Figure Styling */
 
@@ -292,7 +306,7 @@ li > :is(h3, h4):has(+ p, + a), li a > :is(h3, h4, p) {
     }
 }
 
-/* Forms */
+/* Forms and Inputs */
 
 form {
     display: flex;
@@ -302,8 +316,47 @@ form {
 form span.checkbox {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
+form span.checkbox input:first-of-type {
+    margin-right: .4rem;
+}
+
+form.filter-form {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}
+
+
+@media (width <= 550px) {
+    form.filter-form {
+        grid-template-columns: auto auto;
+    }
+  }
+
+details.filter-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--c-highlight);
+    border: 1px solid var(--c-black);
+    background: none;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+}
 
 /* Header and Navigation */
 header {
@@ -331,11 +384,16 @@ nav ul li:not(:last-child) {
     padding-right: .4rem;
 }
 
+details {
+    cursor: pointer;
+}
+
 
 footer {
     position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
 }
 

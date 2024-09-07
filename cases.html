@@ -34,23 +34,60 @@
         </nav>
     </header>
     <main>
-    <div class="col-1 ribbon">
-        <form id="filter-form">
-            <span class="checkbox">
-                <input type="checkbox" name="a" id="a">
-                <label for="a">Test toggle a</label>
-            </span>
-            <span class="checkbox">
-                <input type="checkbox" name="b" id="b">
-                <label for="b">Test toggle b</label>
-            </span>
-            <span class="checkbox">
-                <input type="checkbox" name="c" id="c">
-                <label for="c">Test toggle c</label>
-            </span>
-            <button type="button" name="clearAll" id="clearAll">Clear All</button>            
-        </form>
-    </div>
+        <details class="filter-form">
+            <summary>Filter by ghost type:</summary>
+            <form id="filter-form" class="filter-form">
+                <span class="checkbox">
+                    <input type="checkbox" name="Spirit" id="Spirit">
+                    <label for="Spirit">Spirit</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Wraith" id="Wraith">
+                    <label for="Wraith">Wraith</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Poltergeist" id="Poltergeist">
+                    <label for="Poltergeist">Poltergeist</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Banshee" id="Banshee">
+                    <label for="Banshee">Banshee</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Jinn" id="Jinn">
+                    <label for="Jinn">Jinn</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Revenant" id="Revenant">
+                    <label for="Revenant">Revenant</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Demon" id="Demon">
+                    <label for="Demon">Demon</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Yokai" id="Yokai">
+                    <label for="Yokai">Yokai</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Hantu" id="Hantu">
+                    <label for="Hantu">Hantu</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Goryo" id="Goryo">
+                    <label for="Goryo">Goryo</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Deogen" id="Deogen">
+                    <label for="Deogen">Deogen</label>
+                </span>
+                <span class="checkbox">
+                    <input type="checkbox" name="Thaye" id="Thaye">
+                    <label for="Thaye">Thaye</label>
+                </span>
+                <button type="button" name="clearAll" id="clearAll">Clear All</button>            
+            </form>
+        </details>
     <div class="posts-container">
         <!-- Custom HTML element, post -->
         <div class="post-preview" id="000100" data-tags="a">
