@@ -6,7 +6,7 @@
     <meta name="description" content="Case Reports">
     <meta name="keywords" content="ghosts, blog, GIGS, NameTBD">
     <meta name="author" content="NameTBD">
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NameTBD | Case Reports</title>
     <!-- Code from fonts.google.com -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <script id="filter-script" src="./assets/js/filter.js"></script>
+    <script id="filter-script" src="./assets/js/menu.js"></script>
+    <script>
+        handleFilter();
+        handleMenu();
+    </script>
 </head>
 
 <body>
@@ -24,14 +29,17 @@
         <a href="index.html">
             <h1>NameTBD</h1>
         </a>
-        <nav>
-            <ul>
-                <li><a href="">About</a></li>
-                <li><a href="./cases.html">Case Reports</a></li>
-                <li><a href="./blog_template.html">Blog</a></li>
-                <li><a href="./quickID.html">Quick ID</a></li>
-            </ul>    
+        <nav id="main-menu">
+            <ul role="menu" id="main-menu-list" class="mobile-hidden"> 
+                <li role="none" class="mobile-only"><a role="menuitem" href="./index.html">Main</a></li>
+                <li role="none"><a role="menuitem" href="./about.html">About</a></li>
+                <li role="none"><a role="menuitem" href="./cases.html">Case Reports</a></li>
+                <li role="none"><a role="menuitem" href="./blog.html">Blog</a></li>
+                <li role="none"><a role="menuitem" href="./quickID.html">Quick ID</a></li>
+            </ul>
+            <button class="menu-toggle mobile-only" id="main-menu-toggle">Menu</button>
         </nav>
+        
     </header>
     <main>
         <details class="filter-form">
@@ -90,28 +98,28 @@
         </details>
     <div class="posts-container">
         <!-- Custom HTML element, post -->
-        <div class="post-preview" id="000100" data-tags="a">
+        <div class="post-preview" id="000100" data-tags="Spirit">
             <article>
                 <h2>Case #000100</h2>
                 <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
                 <p>Read More</p>
             </article>
         </div>
-        <div class="post-preview" id="000101" data-tags="b">
+        <div class="post-preview" id="000101" data-tags="Demon">
             <article>
                 <h2>Case #000101</h2>
                 <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
                 <p>Read More</p>
             </article>
         </div>
-        <div class="post-preview" id="000102" data-tags="c">
+        <div class="post-preview" id="000102" data-tags="Hantu">
             <article>
                 <h2>Case #000102</h2>
                 <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
                 <p>Read More</p>
             </article>
         </div>
-        <div class="post-preview" id="000103" data-tags="a b c" >
+        <div class="post-preview" id="000103" data-tags="Banshee" >
             <article>
                 <h2>Case #000103</h2>
                 <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>

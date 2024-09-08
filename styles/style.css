@@ -5,9 +5,13 @@
     font-style: normal;
 }
 
+/* Prevent layout from jumping */
+html { overflow-y: scroll; }
+
 /* https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link */
-/* MOK updating clip to clip-path */
-.screen-reader {
+/* MOK updating clip to clip-path, using for hidden toggle */
+.screen-reader,
+.hidden {
     border: 0;
     clip-path: rect(0 0 0% 0%);
     height: 1px;
@@ -18,6 +22,37 @@
     white-space: nowrap;
     width: 1px;
 }
+
+/* Show only for mobile */
+@media (width >= 550px) {
+    .mobile-only {
+        border: 0;
+        clip-path: rect(0 0 0% 0%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+  }
+
+/* Hide only for mobile */
+@media (width < 550px) {
+    .mobile-hidden {
+        border: 0;
+        clip-path: rect(0 0 0% 0%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+  }
+/* End code gomakethings */
 
 :root {
     --c-white: #EBFEF5;
@@ -46,7 +81,7 @@ body {
     min-width: 300px;
     max-width: 100vw;
     min-height: 100vh;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-size: var(--fontsize);
     line-height: calc(var(--fontsize)*1.5);
 }
@@ -57,6 +92,26 @@ main {
     display: flex;
     flex-direction: column;
     margin: auto;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5, h6 { /*No text should be below 1rem*/
+    font-size: 1rem;
 }
 
 a {
@@ -71,9 +126,36 @@ a:hover, a:focus, a:active {
     background-color: var(--c-highlight);
 }
 
+button {
+    cursor: pointer;
+}
+
+/* Main nav menu for mobile*/
+@media (width <= 550px) {
+    #main-menu-list {
+        position: fixed;
+        z-index: 1; /* handle sticky filter-form */
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--c-white);
+    }
+  }
+
+.menu-toggle {
+    position: fixed;
+    right: 20px;
+    z-index: 1; /* handle sticky filter-form */
+}
+
 
 /* Figure Styling */
-
 figure {
     height: fit-content;
     box-sizing: border-box;
@@ -89,13 +171,19 @@ figcaption {
     flex-basis: 100%;
     width: 100%;
     text-align: center;
+}
+
+img + figcaption {
     padding: 12px;
 }
 
 figure.comic {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
     height: fit-content;
+    max-width: 60%;
     gap:0;
 }
 
@@ -117,6 +205,10 @@ figure.polaroid figcaption{
     padding: 25px;
 }
 
+figure.quote {
+    background-color: var(--c-white);
+}
+
 /* Report/Blog Ag. Page */
 
 .posts-container {
@@ -132,7 +224,7 @@ figure.polaroid figcaption{
     .posts-container {
         grid-template-columns: auto;
     }
-  }
+}
 
 /* Post previews */
 div.post-preview {
@@ -211,7 +303,6 @@ article.post {
 blockquote {
     width: 100%;
     height: fit-content;
-    background-color: #B9BAA3;
     margin: .8rem 0;
     padding: 1rem 2rem;
     border-top: 1px solid var(--c-black);
@@ -330,7 +421,6 @@ form.filter-form {
     gap: 10px;
 }
 
-
 @media (width <= 550px) {
     form.filter-form {
         grid-template-columns: auto auto;
@@ -338,10 +428,14 @@ form.filter-form {
   }
 
 details.filter-form {
+    background-color: var(--c-lowcontrast);
+    position: sticky;
+    top: -1px;
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 10px 0;
+    padding: 10px 0;
 }
 
 input[type='checkbox'],
@@ -363,7 +457,8 @@ header {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
 }
 
 nav {
