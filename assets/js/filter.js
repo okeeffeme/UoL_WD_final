@@ -1,9 +1,10 @@
-function handleFilter (formID = 'filter-form', filterable = 'post-preview', isExcludeMode = false) {
+function handleFilter (formID = 'filter-form', filterable = 'post-preview', containerName = 'posts-container', isExcludeMode = false) {
     document.addEventListener("DOMContentLoaded", () => {
         const checkboxes = document.querySelectorAll(`form[id=${formID}]>span>input[type=checkbox]`);
         const clear = document.querySelector(`form[id=${formID}]>button[type=button][id=clearAll]`);
         const posts = document.getElementsByClassName(filterable);
-        let currentSelection = new Set();
+        const container = document.getElementsByClassName(containerName);
+        let currentSelection = new Set();        
 
         // clear all selected filters
         clear.addEventListener('click', () => {
@@ -32,11 +33,13 @@ function handleFilter (formID = 'filter-form', filterable = 'post-preview', isEx
                 for (let i = 0; i < posts.length; i++) {
                     posts[i].style.display = '';
                 }
+
             } else {
+
                 for (let i = 0; i < posts.length; i++) { // hide all
                     posts[i].style.display = 'none';
                 }
-    
+                  
                 if (!!isExcludeMode) { // exclusive filtering
                     for (let i = 0; i < posts.length; i++) { // display matching excluding
                         let count = 0;

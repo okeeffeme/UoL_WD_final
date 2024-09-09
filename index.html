@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Home">
-    <meta name="keywords" content="ghosts, blog, GIGS, NameTBD">
-    <meta name="author" content="NameTBD">
+    <meta name="keywords" content="ghosts, blog, GIGS, Nancy Ghoul">
+    <meta name="author" content="Nancy Ghoul">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NameTBD | Home</title>
+    <title>Nancy Ghoul | Home</title>
     <!-- Code from fonts.google.com -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,97 +16,167 @@
     <!-- End code from fonts.google.com -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="./assets/js/menu.js"></script>
+    <script>
+        handleMenu();
+    </script>
 </head>
 
 <body>
     <header>
         <a href="index.html">
-            <h1>NameTBD</h1>
+            <h2>Nancy Ghoul</h2>
         </a>
-        <nav>
-            <ul>
-                <li><a href="">About</a></li>
-                <li><a href="./cases.html">Case Reports</a></li>
-                <li><a href="./blog_template.html">Blog</a></li>
-                <li><a href="./quickID.html">Quick ID</a></li>
-            </ul>    
+        <nav id="main-menu">
+            <ul role="menu" id="main-menu-list" class="mobile-hidden">
+                <li role="none" class="mobile-only"><a role="menuitem" href="./index.html">Main</a></li>
+                <li role="none"><a role="menuitem" href="./index.html">About</a></li>
+                <li role="none"><a role="menuitem" href="./cases.html">Case Reports</a></li>
+                <li role="none"><a role="menuitem" href="./blog.html">Blog</a></li>
+                <li role="none"><a role="menuitem" href="./quickID.html">Quick ID</a></li>
+                <li role="none"><button id="dialog-open" onclick="window.contact.showModal()">Contact</button></li>
+            </ul>
+            <button class="menu-toggle mobile-only" id="main-menu-toggle">Menu</button>
         </nav>
     </header>
+    <!-- Contact dialog -->
+    <dialog id="contact" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <h2 id="dialog-title">Do you need help with a haunting?</h2>
+        <p id="dialog-description">
+            In order to correctly prioritise hauntings, please consider if you need immediate attention. <br> If you're
+            unsure about the severity of your case, please consult the <a href="./quickID.html">Quick ID Tool</a>.</p>
+        <p>For immediate assistance, call: <a href="tel:+0000000000">000-00-000</a>
+        </p>
+        <p>For lower priority hauntings, please email: <a href="mailto:NancyGhoul@GIGS.com">NancyGhoul@GIGS.com</a> </p>
+        <button id="dialog-close" onclick="window.contact.close()" autofocus>Close</button>
+    </dialog>
+    <!-- End contact dialog -->
+    <div class="page-title">
+        <h1>Ghost Investigators and Graveyard Scouts Certified <br>Ghost Identification Specialist #0076551</h1>
+    </div>
     <main>
-    <div class="col-3">
-        <a href=''>
-            <h2>Quick ID</h2>
-        </a>
-        <a href=''>
-            <h2>Quick ID</h2>
-        </a>
-        <a href=''>
-            <h2>Get in Touch</h2>
-        </a>
-    </div>
+    <!-- Splash photo -->
+    <figure class="credit">
+        <img src="../assets/img/alexey-turenkov-unsplash.jpg" alt="Nancy Ghoul out on a ghost investigation at an abandoned building">
+        <figcaption>Credit: Alexey Turenkov</figcaption>
+    </figure>
+    <!-- References and Accolades -->
     <div class="col-3">
         <figure class="quote">
             <blockquote>
-                Testimonial quote goes here. Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti nam
-                scelerisque maecenas integer magna nostra morbi ullamcorper. Nulla natoque finibus platea; commodo
-                bibendum augue. Quisque donec sociosqu aenean parturient fermentum potenti.
+                Nancy Ghoul has been awarded the 'Least Deaths' count of 2034. This achievement is a testimony to their proactivity in protecting the living, heading off dangerous hunting behaviour, and their overall human-first approach on haunted sites. Through situational awareness and quick action, Nancy Ghoul has been instrumental in lowering our ghost-related death count.
             </blockquote>
             <figcaption>
-                &mdash; TestimonialName, <cite>ExampleSource</cite> </figcaption>
+                &mdash; GIGS Europe, 2034 </figcaption>
         </figure>
         <figure class="quote">
             <blockquote>
-                Testimonial quote goes here. Sentence Example.
+                A true professional in the paranormal, dedicated to quick and accurate service.
             </blockquote>
             <figcaption>
-                &mdash; TestimonialName</figcaption>
+                &mdash; Patterson Brown</figcaption>
         </figure>
         <figure class="quote">
             <blockquote>
-                Testimonial quote goes here. Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti nam
-                scelerisque maecenas integer magna nostra morbi ullamcorper. Nulla natoque finibus platea; commodo
-                bibendum augue. Quisque donec sociosqu aenean parturient fermentum potenti.
+                Nancy Ghoul is quick to identify the sneakiest of spirits, trickiest of thayes, and the most determined of demons. Due to their keeping up with the latest tools of the trade and advocating for good on-site routines, we are pleased to recommend Nancy Ghoul as one of our top Ghost Identification Specialists.
             </blockquote>
             <figcaption>
-                &mdash; TestimonialName, <cite>ExampleSource</cite> </figcaption>
+                &mdash; G. Van Degon, <cite>Inysm Today</cite> </figcaption>
         </figure>
     </div>
-    <div class="col-1 ribbon">Remember: A sage burning a day keeps the spririts away.</div>
+    <!-- Blog posts -->
+    <div class="col-1 ribbon"><h2>Latest Blog Posts</h2></div>
     <div class="posts-container">
-        <div class="post-preview">
-            <article>
-                <h2>Case #000102</h2>
-                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
-                <p>Read More</p>
-            </article>
+        <div class="post-preview" id="000109" data-tags="Poltergeist">
+            <a href="./blog/ghost-guide-wraith.html">
+                <article>
+                    <h2>Ghost Guide: Poltergeist</h2>
+                    <figure>
+                        <img src="../assets/img/zanyar-ibrahim-unsplash.jpg"
+                            alt="Shadow figure illuminated by blue light" loading="lazy">
+                        <figcaption>Credit: Zanyar Ibrahim</figcaption>
+                    </figure>
+                    <p>Explosions of objects, scattered and strewn items, and high activity levels are all indications of a Poltergeist haunting.</p>
+                    <p class="read-more">Read More</p>
+                </article>
+            </a>
         </div>
-        <div class="post-preview">
-            <article>
-                <h2>Case #000102</h2>
-                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
-                <p>Read More</p>
-            </article>
+        <div class="post-preview" id="000108" data-tags="Hantu">
+            <a href="./blog/ghost-guide-wraith.html">
+                <article>
+                    <h2>Ghost Guide: Hantu</h2>
+                    <figure>
+                        <img src="../assets/img/ben-dodd-unsplash.jpg" alt="Handprint in frost" loading="lazy">
+                        <figcaption>Credit: Ben Dodd</figcaption>
+                    </figure>
+                    <p>Sudden and severe drops in temperature, unexplained frost formation, and puffs of frozen breath are trademark signs of a Hantu.</p>
+                    <p class="read-more">Read More</p>
+                </article>
+            </a>
         </div>
-        <div class="post-preview">
-            <article>
-                <h2>Case #000102</h2>
-                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
-                <p>Read More</p>
-            </article>
+        <div class="post-preview" id="000107" data-tags="Jinn">
+            <a href="./blog/ghost-guide-wraith.html">
+                <article>
+                    <h2>Ghost Guide: Jinn</h2>
+                    <figure>
+                        <img src="../assets/img/julia-kadel-unsplash.jpg" alt="Skull obscured by moss"
+                            loading="lazy">
+                        <figcaption>Credit: Julia Kadel</figcaption>
+                    </figure>
+                    <p>While incredibly powerful, this ghost relies on the avalibility of a nearby powersource. This dependency is to the ghost-hunter's favour.</p>
+                    <p class="read-more">Read More</p>
+                </article>
+            </a>
         </div>
-        <div class="post-preview">
-            <article>
-                <h2>Case #000102</h2>
-                <p>This is an excerpt from the main article, this would be automatically generated with something like a CMS. However we're writing it by hand here...</p>
-                <p>Read More</p>
-            </article>
+        <div class="post-preview" id="000106" data-tags="Demon">
+            <a href="./blog/ghost-guide-wraith.html">
+                <article>
+                    <h2>Ghost Guide: Demon</h2>
+                    <figure>
+                        <img src="../assets/img/andy-li-unsplash.jpg" alt="Dark staircase leading to basement"
+                            loading="lazy">
+                        <figcaption>Credit: Andy Li</figcaption>
+                    </figure>
+                    <p>Demons are by far the most aggressive, and most dangerous of ghost types you will ever face. Extreme caution is advised.</p>
+                    <p class="read-more">Read More</p>
+                </article>
+            </a>
+        </div>
+        <div class="post-preview" id="000105" data-tags="Yokai">
+            <a href="./blog/ghost-guide-wraith.html">
+                <article>
+                    <h2>Ghost Guide: Yokai</h2>
+                    <figure>
+                        <img src="../assets/img/andy-li-unsplash-1.jpg" alt="Long, dark hallway inside a school"
+                            loading="lazy">
+                        <figcaption>Credit: Andy Li</figcaption>
+                    </figure>
+                    <p>If you have noticed an increase in ghost activity coinciding with a rise in noise levels, a Yokai is a top suspect.</p>
+                    <p class="read-more">Read More</p>
+                </article>
+            </a>
+        </div>
+        <div class="post-preview" id="000104" data-tags="Goryo">
+            <a href="./blog/ghost-guide-wraith.html">
+                <article>
+                    <h2>Ghost Guide: Goryo</h2>
+                    <figure>
+                        <img src="../assets/img/stefan-steinbauer-unsplash.jpg" alt="Hidden bookcase door"
+                            loading="lazy">
+                        <figcaption>Credit: Stefan Steinbauer</figcaption>
+                    </figure>
+                    <p>These ghosts are extremely attached to their places of death, making their identification straightforward.</p>
+                    <p class="read-more">Read More</p>
+                </article>
+            </a>
         </div>
     </div>
+    <!-- End blog posts -->
 </main>
-    <footer>
-        <h4>NameTBD</h4>
-        <a href="./report.html">Report</a>
-    </footer>
+<footer>
+    <h4>Copyright © 2034 Nancy Ghoul</h4>
+    <a href="./report.html">Report</a>
+</footer>
 </body>
 
 </html>

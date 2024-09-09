@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Quick ID">
-    <meta name="keywords" content="ghosts, blog, GIGS, NameTBD">
-    <meta name="author" content="NameTBD">
+    <meta name="keywords" content="ghosts, blog, GIGS, Nancy Ghoul">
+    <meta name="author" content="Nancy Ghoul">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NameTBD | Quick ID</title>
+    <title>Nancy Ghoul | Quick ID</title>
     <!-- Code from fonts.google.com -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <script src="./assets/js/filter.js"></script>
+    <script src="./assets/js/menu.js"></script>
     <script>
-        handleFilter('filter-form', 'ghost', true)
+        handleFilter('filter-form', 'ghost', 'ghosts-container',true);
+        handleMenu();
     </script>
 
 </head>
@@ -26,19 +28,46 @@
 <body>
     <header>
         <a href="index.html">
-            <h1>NameTBD</h1>
+            <h2>Nancy Ghoul</h2>
         </a>
-        <nav>
-            <ul>
-                <li><a href="">About</a></li>
-                <li><a href="./cases.html">Case Reports</a></li>
-                <li><a href="./blog_template.html">Blog</a></li>
-                <li><a href="./quickID.html">Quick ID</a></li>
-            </ul>    
+        <nav id="main-menu">
+            <ul role="menu" id="main-menu-list" class="mobile-hidden">
+                <li role="none" class="mobile-only"><a role="menuitem" href="./index.html">Main</a></li>
+                <li role="none"><a role="menuitem" href="./index.html">About</a></li>
+                <li role="none"><a role="menuitem" href="./cases.html">Case Reports</a></li>
+                <li role="none"><a role="menuitem" href="./blog.html">Blog</a></li>
+                <li role="none"><a role="menuitem" href="./quickID.html">Quick ID</a></li>
+                <li role="none"><button id="dialog-open" onclick="window.contact.showModal()">Contact</button></li>
+            </ul>
+            <button class="menu-toggle mobile-only" id="main-menu-toggle">Menu</button>
         </nav>
     </header>
-    <main>
+    <!-- Contact dialog -->
+    <dialog id="contact" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <h2 id="dialog-title">Do you need help with a haunting?</h2>
+        <p id="dialog-description">
+            In order to correctly prioritise hauntings, please consider if you need immediate attention. <br> If you're
+            unsure about the severity of your case, please consult the <a href="./quickID.html">Quick ID Tool</a>.</p>
+        <p>For immediate assistance, call: <a href="tel:+0000000000">000-00-000</a>
+        </p>
+        <p>For lower priority hauntings, please email: <a href="mailto:NancyGhoul@GIGS.com">NancyGhoul@GIGS.com</a> </p>
+        <button id="dialog-close" onclick="window.contact.close()" autofocus>Close</button>
+    </dialog>
+    <!-- End contact dialog -->    
+     <div class="page-title">
+        <h1>Quick Identification</h1>
+    </div>
+    <!-- Quick ID Widget -->
+    <main class="quickID">
+        <h2>Overview</h2>
+        <p>
+            This tool is a quick diagnostic to help measure the severity of your haunting. All ghosts are dangerous, but with proper precautions some types may be easier to avoid.
+        </p>
+        <h5>Disclaimer</h5>
+        <p>This tool is not a substitution for a Ghost Identification Specialist Report and does not serve as sufficent evidence for a GIGS Licensed Eradication. Accuracy is not guaranteed for a Quick ID. Always seek the advice of your local Ghost Identification Specialist.</p>
+        <!-- Quick ID filters -->
     <div class="col-1 ribbon">
+        <h3>Please select observed evidence:</h3>
         <form id="filter-form" class="filter-form">
             <span class="checkbox">
                 <input type="checkbox" name="EMF" id="EMF">
@@ -71,25 +100,27 @@
             <button type="button" name="clearAll" id="clearAll">Clear All</button>            
         </form>
     </div>
+    <!-- Quick ID Results -->
     <div class="ghosts-container">
+        <h3>Known ghost types that match this evidence:</h3>
         <ul>
-            <li class='ghost' data-tags='EMF Spiritbox Book'> Spirit</li>
-            <li class='ghost' data-tags='EMF Spiritbox DOTS'> Wraith</li>
-            <li class='ghost' data-tags='Spiritbox UV Book'> Poltergeist</li>
-            <li class='ghost' data-tags='UV Orbs DOTS'> Banshee</li>
-            <li class='ghost' data-tags='EMF UV Freezing'> Jinn</li>
-            <li class='ghost' data-tags='Orbs Book Freezing'> Revenant</li>
-            <li class='ghost' data-tags='UV Book Freezing'> Demon</li>
-            <li class='ghost' data-tags='Spiritbox Orbs DOTS'> Yokai</li>
-            <li class='ghost' data-tags='UV Orbs Freezing'> Hantu</li>
-            <li class='ghost' data-tags='EMF UV DOTS'> Goryo</li>
-            <li class='ghost' data-tags='Spiritbox Book DOTS'> Deogen</li>
-            <li class='ghost' data-tags='Orbs Book DOTS'> Thaye</li>
+            <li class='ghost' data-tags='EMF Spiritbox Book'>Spirit <em class="low">Less Dangerous</em></li>
+            <li class='ghost' data-tags='EMF Spiritbox DOTS'>Wraith <em>Dangerous</em></li>
+            <li class='ghost' data-tags='Spiritbox UV Book'>Poltergeist <em class="low">Less Dangerous</em></li>
+            <li class='ghost' data-tags='UV Orbs DOTS'>Banshee <em>Dangerous</em></li>
+            <li class='ghost' data-tags='EMF UV Freezing'>Jinn <em class="low">Less Dangerous</em></li>
+            <li class='ghost' data-tags='Orbs Book Freezing'>Revenant <em class="high">Extremely Dangerous</em></li>
+            <li class='ghost' data-tags='UV Book Freezing'>Demon <em class="high">Extremely Dangerous</em></li>
+            <li class='ghost' data-tags='Spiritbox Orbs DOTS'>Yokai <em>Dangerous</em></li>
+            <li class='ghost' data-tags='UV Orbs Freezing'>Hantu <em>Dangerous</em></li>
+            <li class='ghost' data-tags='EMF UV DOTS'>Goryo <em class="low">Less Dangerous</em></li>
+            <li class='ghost' data-tags='Spiritbox Book DOTS'>Deogen <em class="low">Less Dangerous</em></li>
+            <li class='ghost' data-tags='Orbs Book DOTS'>Thaye <em>Dangerous</em></li>
         </ul>
     </div>
 </main>
     <footer>
-        <h4>NameTBD</h4>
+        <h4>Nancy Ghoul</h4>
         <a href="./report.html">Report</a>
     </footer>
 </body>

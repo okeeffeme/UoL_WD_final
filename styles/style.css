@@ -36,7 +36,7 @@ html { overflow-y: scroll; }
         white-space: nowrap;
         width: 1px;
     }
-  }
+}
 
 /* Hide only for mobile */
 @media (width < 550px) {
@@ -66,6 +66,7 @@ html { overflow-y: scroll; }
     --fontsize: 1rem;
     /* Gradients created with https://cssgradient.io/ */
     --gradient-highlight: linear-gradient(90deg, rgba(226,239,112,1) 0%, rgba(134,142,66,1) 100%);
+    --gradient-fade-to-low: linear-gradient(0deg, rgba(185,186,163,1) 0%, rgba(185,186,163,0) 100%);
     scroll-behavior: smooth;
     /* Shadows created with https://www.joshwcomeau.com/shadow-palette/ */
     --shadow-color: 63deg 11% 39%;
@@ -74,6 +75,7 @@ html { overflow-y: scroll; }
       3.4px 4.2px 6.5px -2px hsl(var(--shadow-color) / 0.57);
 }
 
+/* General Styling */
 body {
     background-color: var(--c-lowcontrast);
     color: var(--c-highcontrast-1);
@@ -94,26 +96,6 @@ main {
     margin: auto;
 }
 
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    font-size: 1.6rem;
-}
-
-h3 {
-    font-size: 1.4rem;
-}
-
-h4 {
-    font-size: 1.2rem;
-}
-
-h5, h6 { /*No text should be below 1rem*/
-    font-size: 1rem;
-}
-
 a {
     font-weight: 600;
     color: var(--c-palette-1);
@@ -127,14 +109,82 @@ a:hover, a:focus, a:active {
 }
 
 button {
+    border: 2px solid var(--c-black);
+    background-color: var(--c-lowcontrast);
+    padding: 0 1rem;
+    border-radius: 1rem;
     cursor: pointer;
+}
+button:hover, button:focus, button:active {
+    background-color: var(--c-highlight);
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+
+h4, h5, h6 { /*No text should be below 1rem*/
+    font-size: 1rem;
+}
+
+h1, h2, h3 {
+    margin: 1rem 0;
+}
+
+h4, h5, h6 {
+    margin: .4rem 0;
+}
+
+/* Handle styling if Header is followed by Paragraphs */
+:is(h1, h2, h3):has(+ p, ul, ol, dl,+ a) { 
+    margin-bottom: .8rem;
+}
+
+:is(h4, h5, h6):has(+ p, ul, ol, dl,+ a) {
+    margin-bottom: .4rem;
+}
+
+p {
+    color: var(--c-highcontrast);
+    margin-bottom: .5rem;
+}
+
+:is(ul, ol, dl) {
+    margin: .2rem 0;
+}
+
+li {
+    margin: .4rem 0;
+}
+
+li > :is(h3, h4):has(+ p, + a), li a > :is(h3, h4, p) {
+    color: var(--c-highcontrast-1);
+    margin: 1rem 0 0 0;
+}
+
+/* Handle nested lists */
+:is(ul, ol, dl) :is(ul, ol, dl),
+:is(ul, ol, dl) :is(ul, ol, dl) li { 
+    margin: 0;
 }
 
 /* Main nav menu for mobile*/
 @media (width <= 550px) {
     #main-menu-list {
         position: fixed;
-        z-index: 1; /* handle sticky filter-form */
+        z-index: 2; /* handle sticky filter-form */
         top: 0;
         left: 0;
         height: 100vh;
@@ -151,9 +201,30 @@ button {
 .menu-toggle {
     position: fixed;
     right: 20px;
-    z-index: 1; /* handle sticky filter-form */
+    z-index: 2; /* handle sticky filter-form */
 }
 
+/* Special width on Quick ID */
+main.quickID {
+    min-width: 300px;
+    max-width: 50vw;
+}
+
+.quickID em {
+    margin: 0 .6rem;
+    padding: 0 .4rem;
+    background-color: var(--c-highlight);
+    color: var(--c-black);
+}
+
+.quickID em.low {
+    background-color: #B9BAA3;
+}
+
+.quickID em.high {
+    background-color: #421821;
+    color: var(--c-lowcontrast);
+}
 
 /* Figure Styling */
 figure {
@@ -177,20 +248,6 @@ img + figcaption {
     padding: 12px;
 }
 
-figure.comic {
-    display: grid;
-    grid-template-columns: auto;
-    align-items: center;
-    justify-content: center;
-    height: fit-content;
-    max-width: 60%;
-    gap:0;
-}
-
-figure.comic img {
-    min-width: 250px;
-}
-
 figure.polaroid {
     border-top: 34px outset #faf7e8;
     border-left: 30px solid #e6e1d8;
@@ -205,21 +262,45 @@ figure.polaroid figcaption{
     padding: 25px;
 }
 
-figure.quote {
-    background-color: var(--c-white);
+figure.credit {
+    position: relative;
+    padding: 0;
+    margin: 0;
 }
 
-/* Report/Blog Ag. Page */
+figure.credit figcaption,
+.post-preview figcaption {
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    filter: invert(); /* ensure credit is always legible */
+}
 
+.post-preview img {
+    filter: grayscale();
+}
+
+.post-preview img:hover,
+.post-preview img:focus,
+.post-preview img:active {
+    filter: grayscale(10%);
+}
+
+/*Aggregated Content Page */
 .posts-container {
     display: grid;
     width: 100%;
     height: fit-content;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    background-color: var(--c-highcontrast);
     gap: 10px;
 }
-
+/* Three columns for large screens */
+@media (width >= 1200px) {
+    .posts-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+/* One column for smaller screens */
 @media (width <= 950px) {
     .posts-container {
         grid-template-columns: auto;
@@ -230,7 +311,7 @@ figure.quote {
 div.post-preview {
     align-self: center;
     justify-self: center;
-    border: 1px solid var(--c-highcontrast-1);
+    border: 2px solid var(--c-highcontrast-1);
     min-width: 300px;
     max-width: 400px;
     width: 100%;
@@ -238,14 +319,59 @@ div.post-preview {
 }
 
 .post-preview article {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 10px 30px;
 }
 
-/* Article Styling */
+.post-preview :is(h2,h3,h4,h5,h6) {
+    margin: .2rem 0;
+}
 
+.post-preview :is(h2,h3,h4,h5,h6):last-of-type {
+    margin-bottom: 1rem;
+}
+
+.post-preview p:not(:last-child) {
+    height: 5rem;
+    overflow: hidden;
+}
+
+.post-preview p:not(:last-child)::after {
+    content: '';
+    display: block;
+    position: relative;
+    top: -2rem;
+    width: 350px;
+    height: 2rem;
+    background-image: var(--gradient-fade-to-low)
+}
+
+.post-preview figure {
+    position: relative; /* Setup for absolute positioning of credit */
+    order: -1; /* The figure is a child to Article, but display the figure first */
+    margin: -10px -30px 0 -30px;
+    padding: 0;
+    z-index: 0;
+}
+
+.post-preview a {
+    text-decoration: none;
+}
+
+.post-preview a:hover h2,
+.post-preview a:hover .read-more,
+.post-preview a:focus h2,
+.post-preview a:focus .read-more {
+    text-decoration: underline;
+    text-decoration-color: var(--c-black);
+    color: var(--c-palette-1);
+}
+
+/* Article Styling */
 main.post {
-    margin: auto;
+    margin: 24px auto 0 auto;
     min-width: 400px;
     max-width: 80vw;
     display: flex;
@@ -261,6 +387,22 @@ main.post > aside {
     height: auto;
 }
 
+/* handle posts on mobile */
+@media (width < 550px) {
+    main.post {
+        flex-direction: column;
+        flex-direction: 1 1 auto;
+        align-content: center;
+        justify-content: center;
+    }
+    main.post > aside {
+        position: relative;
+    }
+}
+
+#toc {
+    line-height: 1.6rem;
+}
 
 main.post > aside > nav {
     display: flex;
@@ -286,9 +428,11 @@ article.post {
     margin: auto;
 }
 
-.chapter-title {
+.page-title {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    padding: 0 9vw;
 }
 
 .page-turn {
@@ -299,7 +443,6 @@ article.post {
 }
 
 /* Quotes and Citations */
-
 blockquote {
     width: 100%;
     height: fit-content;
@@ -323,48 +466,7 @@ blockquote::after {
     right: -.2rem;
 }
 
-/* Headings */
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 1rem 0;
-}
-
-h2 {
-    color: var(--c-highcontrast-1);
-}
-
-
-:is(h1, h2, h3, h4, h5, h6):has(+ p, ul, ol, dl,+ a) {
-    margin-bottom: .8rem;
-}
-
-p, hr {
-    color: var(--c-highcontrast);
-    margin-bottom: .5rem;
-}
-
-:is(ul, ol, dl) {
-    margin: 1.2rem 0;
-}
-
-li {
-    margin: .4rem 0;
-}
-
-li > :is(h3, h4):has(+ p, + a), li a > :is(h3, h4, p) {
-    color: var(--c-highcontrast-1);
-    margin: 0.2rem 0;
-}
-
-/* Handle nested lists */
-
-:is(ul, ol, dl) :is(ul, ol, dl),
-:is(ul, ol, dl) :is(ul, ol, dl) li { 
-    margin: 0;
-}
-
 /* Columns */
-
 [class*="col"] {
     display: flex;
     width: 100%;
@@ -377,7 +479,6 @@ li > :is(h3, h4):has(+ p, + a), li a > :is(h3, h4, p) {
 }
 
 [class*="col"] > :is(h1, h2, h3, h4, h5, h6) {
-    color: blue;
     width: 100%;
 }
 
@@ -398,7 +499,6 @@ li > :is(h3, h4):has(+ p, + a), li a > :is(h3, h4, p) {
 }
 
 /* Forms and Inputs */
-
 form {
     display: flex;
     flex-direction: column;
@@ -430,11 +530,15 @@ form.filter-form {
 details.filter-form {
     background-color: var(--c-lowcontrast);
     position: sticky;
+    z-index: 1;
     top: -1px;
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 10px 0;
+}
+
+details.filter-form summary {
     padding: 10px 0;
 }
 
@@ -452,13 +556,20 @@ label {
     cursor: pointer;
 }
 
-/* Header and Navigation */
+/* Header, Footer and Navigation */
 header {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 9vw;
+}
+/* Center name when mobile view */
+@media (width < 550px) {
+    header {
+        justify-content: center;
+    }
 }
 
 nav {
@@ -483,13 +594,28 @@ details {
     cursor: pointer;
 }
 
-
 footer {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    margin: 20px 0 10px 0;
+}
+
+/* Dialog */
+dialog {
+    z-index: 10; /*Ensure dialog is always on top*/
+    align-self: center;
+    justify-self: center;
+    background-color: var(--c-lowcontrast);
+}
+
+dialog::backdrop {
+    background-color: #0A100D;
+    background-image: var(--gradient-highlight);
+    opacity: 50%;
+    filter: blur(10%);
 }
 
 /* For fun */

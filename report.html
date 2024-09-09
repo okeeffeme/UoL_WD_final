@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="chapter-title">
+    <div class="page-title">
         <h1>CM1040 Web Dev: Report</h1>
     </div>
     <main class="post">
+        <!-- Table of contents -->
         <aside>
-            <nav>
-                <h2>Table of contents</h2>
+            <h2 id="toc">Table of contents</h2>
+            <nav aria-labelledby="toc">
                 <a href="#intro">Introduction</a>
                 <a href="#inspiration">Inspiration</a>
                 <a href="#accessibility">Accessibility</a>
@@ -39,18 +40,15 @@
             <a id="intro"><h2>Introduction</h2></a>
             <blockquote>What is the essential story being told by your portfolio site? Describe the version of you that it is about.</blockquote>
             
-            <p>In 2034, ghosts are an epidemic haunting homes and businesses. Systems have been put into place to identify and expunge these otherworldly presences. Identification specialists are a required first-step in requesting a licensed and insured ghost remediation.</p>
-            <p>NameTBD is a Ghost Identification Specialist, licensed thru Ghost Investigators and Graveyard Scouts (GIGS). Their main line of work is to identify ghosts and gather evidence in hauntings, passing their findings off to a GIGS cleanup team.</p>
-            <p>This future has largely been inspired by the series <a href="https://en.wikipedia.org/wiki/Lockwood_%26_Co.">Lockwood & Co.</a> and the video game <a href="https://en.wikipedia.org/wiki/Phasmophobia_(video_game)">Phasmaphobia</a>. All ghost types and mechanics described on the site are direct references to their video game versions.</p>
+            <p>In 2034, ghosts are an epidemic haunting homes and businesses. Systems have been put into place to identify and expunge these otherworldly presences. Ghost Identification Specialists are a required first-step in requesting a licensed and insured ghost remediation.</p>
+            <p><a href="./index.html">Nancy Ghoul</a> is a Ghost Identification Specialist, licensed thru Ghost Investigators and Graveyard Scouts (GIGS). Their main line of work is to identify ghosts and gather evidence in hauntings, passing their findings off to a GIGS cleanup team.</p>
+            <p>This future has largely been inspired by the series <a href="https://en.wikipedia.org/wiki/Lockwood_%26_Co.">Lockwood & Co.</a>, the video game <a href="https://en.wikipedia.org/wiki/Phasmophobia_(video_game)">Phasmaphobia</a>, and <a href="https://x.com/_pocketss/status/1410640623359729665">this comic by artist _pocketss</a>. All ghost types and mechanics described on the site are direct references to their Phasmophobia game versions.</p>
             <blockquote>What is the audience you are addressing? What type of structure did you choose to implement?</blockquote>
             <p>Vistors to the site want help with their ghost-related problems. They are looking for quick, reliable, and GIGS-certified assistance to resolve their hauntings.</p>
-            <p>To assure the visitor on NameTBD's reliablity, links to accreditation and affidavits are avalible on the 'About' page. GIGS mandated reports serve as NameTBD's portfolio of successfully solved cases. NameTBD also writes blog articles relevant to their work, and has also provided a Quick ID page to help them triage potential cases.</p>
-            
-            <figure class="comic">
-            <img src="assets/pocketss_1.jpg" alt="Comic. A laptop displaying a haunting identification website.">
-            <img src="assets/pocketss_2.jpg" alt="A man looking up from the laptop towards the demon in his kitchen.">
-            <img src="assets/pocketss_3.jpg" alt="The demon opens a bag of treats for a cat. The man enters the behaviour into the website.">
-            <img src="assets/pocketss_4.jpg" alt="The website changes into a help queue. The demon continues to feed the cat.">
+            <p>To assure the visitor on Nancy Ghoul's reliablity, links to accreditation and affidavits are avalible on the 'About' page. GIGS mandated reports serve as Nancy Ghoul's portfolio of successfully solved cases. Nancy Ghoul also writes blog articles relevant to their work, and has also provided a Quick ID page to help them triage potential cases.</p>
+            <p>The website has a traditional, hierarchical structure. The main navigation in the header provides access to top-level pages, such as the case reports and blog. Access to the subpages (individual case reports or blog posts) is avalible through their respective parent.</p>
+            <figure>
+            <img src="./assets/img/pocketss_4.jpg" alt="A comic depicting a man sitting on a darkened staircase, his laptop displaying a haunting identification website. A demon causes chaos in the adjacent kitchen, feeding a cat.">
             <figcaption>Pocketss <cite><a href="https://twitter.com/_pocketss/status/1410640623359729665">@_pocketss</a></cite></figcaption>
             </figure>
             
@@ -87,14 +85,14 @@
                 <li>
                     <h3>Joshua Comeau</h3>
                     <a href="https://www.joshwcomeau.com/"><h4>joshwcomeau.com</h4></a>
-                    <p>Josh is a great developer, and I use his CSS reset almost exlusively. His personal portfolio site is a bit of an outlier, as it focuses mainly on his tutorials and articles with very little about himself (although some of his content does focus on himself and his personal experiences).</p>
+                    <p>Josh Comeau is a great developer, and I use his CSS reset almost exlusively. His personal portfolio site is a bit of an outlier, as it focuses mainly on his tutorials and articles with very little about himself (although some of his content does focus on himself and his personal experiences).</p>
                     <h4>Main Nav</h4>
                     <ul>
                         <li><h5>Home</h5><p></li>
                         <li><h5>Latest</h5><p> Blog posts in decending post order</p></li>
                         <li><h5>Posts</h5><p> Blog posts in categories</p></li>
                         <li><h5>Goodies</h5><p> Helpers like snippets, gradient generator, and shadow generator</p></li>
-                        <li><h5>Courses</h5><p> An overview of the courses Josh has published</p></li>
+                        <li><h5>Courses</h5><p> An overview of the courses Comeau has published</p></li>
                         <li><h5>Dark/Light Mode Toggle</h5></li>
                         <li><h5>Disable Sounds</h5></li>
                         <li><h5>RSS Feed</h5></li>
@@ -102,22 +100,22 @@
                     <h4>Footer Nav</h4>
                     <ul>
                         <li><h5>Copyright</h5></li>
-                        <li><h5>Tutorials</h5><p>A list of Josh's most common tutorial categories: React, CSS, Javascript, etc.</p></li>
-                        <li><h5>Links</h5><p>Legal links relevant to Josh's tutorial site and his Twitter</p></li>
+                        <li><h5>Tutorials</h5><p>A list of Comeau's most common tutorial categories: React, CSS, Javascript, etc.</p></li>
+                        <li><h5>Links</h5><p>Legal links relevant to Comeau's tutorial site and his Twitter</p></li>
                     </ul>
                 </li>
                 <li>
                     <h3>Dave Rupert</h3>
                     <a href="https://daverupert.com/"><h4>daverupert.com</h4></a>
-                    <p>I am familiar with Dave thru the podcast Shoptalk, and his contributions to the A11Y project.</p>
+                    <p>I am familiar with Dave Rupert thru the podcast Shoptalk, and his contributions to the A11Y project.</p>
                     <h4>Main Nav</h4>
                     <ul>
                         <li><h5>Home</h5><p> Gallery of work and projects</p></li>
                         <li><h5>About</h5><p> Self described, includes links to interviews and published work, likes and gear, and support</p></li>
                         <li><h5>Archives</h5><p> Blog posts with filtering via tags</p></li>
-                        <li><h5>Bookshelf</h5><p> What Dave's been reading</p></li>
+                        <li><h5>Bookshelf</h5><p> What Rupert's been reading</p></li>
                         <li><h5>Projects</h5><p> Gallery of work and projects</p></li>
-                        <li><h5>Stories</h5><p> Dave's short scifi</p></li>
+                        <li><h5>Stories</h5><p> Rupert's short scifi</p></li>
                         <li><h5>RSS Feed</h5></li>
                     </ul>
                     <h4>Footer Nav</h4>
@@ -133,7 +131,7 @@
             <ul>
                 <li>
                     <h4><s>All</s> About Me</h4>
-                    <p>The 'About' sections were less of a CV, and more of an overview of interests and published work (or talks). Josh forwent an 'About' section entirely.</p>
+                    <p>The 'About' sections were less of a CV, and more of an overview of interests and published work (or talks). Comeau forwent an 'About' section entirely.</p>
                 </li>
                 <li>
                     <h4>Blogs</h4>
@@ -141,75 +139,137 @@
                 </li>
                 <li>
                     <h4>Cool tidbits</h4>
-                    <p>Each author's personality is showcased on their site. There are cute additions like Josh's avatar popping out from the side. Dave has a 'Star Wars crawl' inspired landing page, and has included his current reading list in the topline navigation. Lynn's entire site is just cool CSS. She also has a shop for her designs, and a page specifically for CSS gifs she's created.</p>
+                    <p>Each author's personality is showcased on their site. There are cute additions like Comeau's avatar popping out from the side of the webpage as the user scrolls down. Rupert has a 'Star Wars crawl' inspired landing page, and has included his current reading list in the topline navigation. Fisher's entire site is just cool CSS. She also has a shop for her designs, and a page specifically for CSS gifs she's created.</p>
+                </li>
+                <li>
+                    <h4>Contact</h4>
+                    <p>The days of contact forms are over. All references to contact the author are either a <code>mailto</code> link or the author's social media. Rupert has not included his email.</p>
                 </li>
             </ul>
             
             <p>I am definitely straying a bit from a developer's website with my chosen persona. Because of the nature of my fantastical subject matter, I aim to incorporate these findings but also focus on the report's prompt of 'What is the audience you are addressing?'</p>
-            <p>While most of the inspiration sites were light on their 'About' pages, NameTBD will need a more robust 'About' page to reassure their potential clientele that they are capable and qualified. This will include their GIGS certification number and accreditations.</p>
-            <p>I will be implementing blog posts, as a site visitor might be interested in reading about ghosts, hauntings, and other related topics. In addition, in this universe GIGS certified hunters are required to write and publish case reports for each ghost identified. These cases will be published on NameTBD's site.</p>
+            <p>While most of the inspiration sites were light on their 'About' pages, Nancy Ghoul will need a more robust 'About' page to reassure their potential clientele that they are capable and qualified. This will include their GIGS certification number and accreditations.</p>
+            <p>I will be implementing blog posts, as a site visitor might be interested in reading about ghosts, hauntings, and other related topics. In addition, in this universe GIGS certified hunters are required to write and publish case reports for each ghost identified. These cases will be published on Nancy Ghoul's site.</p>
             <p>For a fun addition, visitors might want to quickly diagnose their hauntings. A 'Quick ID' checklist will be avalible for site visitors to hopefully gather more information about their haunting. In-universe, this also helps with triaging the haunting.</p>
             <a id="accessibility"><h2>Accessibility</h2></a>
             <blockquote>State 3 ways in which your site is accessible.</blockquote>
-            <p>I'll be focusing on clear, keyboard driven navigation, semantic html with media descriptions, and toggles for animations.</p>
+            <ol>
+                <li>
+                    I've focused on keeping a clean HTML structure, minimising divs and having a hierarchical structure that makes sense for screen-readers. For example, blog previews include an image. Visually, I'd want to display this image before the blog title, but semantically it makes more sense for it to be below. I've used flex ordering to achieve both needs.
+                </li>
+                <li>
+                    All images also include descriptive alt text, as well as attributions. While I personally feel this is a minimum to achieve an accessible website, this is often overlooked.
+                </li>
+                <li>
+                    I have also exclusively used native HTML elements, rather than creating buttons or checkboxes from <code>div</code> tags. Using native HTML elements means the site takes advantage of built-in ARIA functionality. This removes the need to explicitly add aria-attributes, such as <code>aria-checked</code> on custom checkboxes. I've lightly styled the native elements using CSS <code>accent-color</code> to better intergrate them into the theme of the website.
+                </li>
+                <li>
+                    Consideration has also been made when selecting the colours of the site. All text and background combinations have been tested to ensure a contrast ratio of 4.5:1 or higher. A matrix of combinations is avalible in the <a href="#appendices">Appendix</a>.
+                </li>
+            </ol>
             <a id="usability"><h2>Usability</h2></a>
             <blockquote>State 3 ways in which you considered the usability of your site.</blockquote>
-            <p>I've considered the target audience's main goals will be to contact NameTBD, validate NameTBD's accreditation and competence, and find solace in other cases that were resolved. All of these motivators will be addressed via top level navigation for ease of access.</p>
-            <p>In looking at Josh's site, I found the HTML structure of his blog posts fantastic. Each post title is a h1 tag, each article has a table of contents in an aside, each subheader has an anchor. I am directly referencing his layout when designing my own. This structure gives a clear overview to the contents of the article, and helps readers quickly navigate to content that is the most relevant to them.</p>
+            <ol>
+                <li>
+                    <p>I've considered the target audience's main goals will be to contact Nancy Ghoul, validate Nancy Ghoul's accreditation and competence, and find solace in other cases that were resolved. All of these motivators will be addressed via top level navigation for ease of access.</p>
+                </li>
+                <li>
+                    <p>In looking at Comeau's site, I found the HTML structure of his blog posts fantastic. Each post title is a h1 tag, each article has a table of contents in an aside, each subheader has an anchor. I am directly referencing his layout when designing my own. This structure gives a clear overview to the contents of the article, and helps readers quickly navigate to content that is the most relevant to them.</p>
+                </li>
+                <li>
+                    Another addition to improve the usability of the site are the filters avalible on case reports and blog posts. Visitors will likely be searching for information about specific ghost types. These filters allow quick selection of content relevant to the user's needs.
+                </li>
+            </ol>
             <a id="learning"><h2>Learning</h2></a>
             <blockquote>State 3 things you had to learn or find out to create your site. How did you achieve that?</blockquote>
+            <ol>
+                <li>
+                    <p>There were several components where I wanted to guarantee that the HTML was both the most semantically correct <em>and</em> accessible. Quotations and testimonials, for example, are not components that I've used frequently. My go-to for most component compositions is <a href="">CSS Tricks</a>, and <a href="https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/">this article by John Rhea</a> provided good insight into best practice.</p>
+                </li>
+                <li>
+                    <p>I have also not previously implemented a native dialog element, and was interested in testing the methods avalible via pure HTML and CSS. However, it is unfortunately not possible to have a working dialog without some Javascript to handle opening and closing of the modal. It took a few articles and tutorials to implement what I wanted to achieve.</p>
+                </li>
+                <li>
+                    While I've already mentioned the structure of the blog posts on Comeau's site, it was a geninuely fun learning moment to discover the structure. I feel it's rare to find something so well crafted with accessible HTML structure in mind. I haven't created a blog, so seeing Comeau's implementation was a great inspiration. 
+                </li>
+            </ol>
             
-            <p>There were several components where I wanted to guarantee that the HTML was both the most semantically correct <em>and</em> accessible. Quotations and testimonials, for example, are not components that I've used frequently. My go-to for most component compositions is <a href="">CSS Tricks</a>, and <a href="https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/">this article by John Rhea</a> provided good insight into best practice.</p>
             <a id="evaluation-1"><h2>Evaluation I</h2></a>
             <blockquote>What aspects of your work do you think were particularly successful? Why?</blockquote>
+            <p>I am fairly pleased with the design of the site. It's taken on a very minimalist, almost brutalist, interpretation of an old Nancy Drew book. This allows the focus to be on the content, which fits for the brief. It also lends itself to an almost government-like identity, which fits with the in-universe premise of ghost hunting being a regulated service industry.</p>
+            <p>Writing the inclusive/exclusive filter for the blogs, case reports, and quick ID was also fun. While the requirements were deceptively simple, testing each state revealed that the script needed to be more advanced than originally anticipated. The final implementation works correctly, and is able to handle both the inclusive and exlusive behaviour needed for all use-cases.</p>
             <a id="evaluation-2"><h2>Evaluation II</h2></a>
             <blockquote>What aspects of your work could be improved? How might you do things
                 differently another time?</blockquote>
+                <p>As mentioned, I struggled with implementing the Javascript for the dialog component. Despite referencing the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">documentation</a> for the methods avalible on the <code>dialog</code>, I couldn't get the example to work in my implementation. Something seemed to be missing a type, as the error usually came back with <code>.close is not a function</code>. I ended up following the example shown in the <a href="https://css-tricks.com/some-hands-on-with-the-html-dialog-element/">CSS Tricks article here</a>. This will be something I continue to look into independently.</p>
+                <p>Another improvement I would like to make is adding an 'empty' state for the filtering components. As it is now, if a user selects a combination of filters and no results match, nothing shows. Ideally there should be a message encouraging changing the selected filters. I had tried to implement this, but couldn't find a reliable, accessible way to do so. Adding elements to the DOM tend to 'lag' behind by one state change. Another attempted solution of 'hiding' a message behind the content didn't end up being accessible to screen readers; it was either always present, or did not have the 'screen-reader' tag removed in time for it to be true.</p>
             <a id="resources"><h2>Resources</h2></a>
             <blockquote>What resources did you use in your work? List any sources of information, libraries, plugins, code or tools (you
                 should also indicate inclusions from other sources within your code using comments)</blockquote>
-            <p>I had ChatGPT generate the blog posts on <time datetime="2007-08-29T13:58Z"> August 29th, 2007 at 13:58</time>. The prompt was as follows:</p>
-            <p>write a blog post about a phasmophobia spirit</p>
-            <p>This prompt was used for each ghost type.</p>
+                <ul>
+                    <li>
+                        Accessible color palette builder, 2017. [Online]. Available:https://toolness.github.io/accessible-color-matrix/. [Accessed: August 19th, 2024]. 
+                    </li>
+                    <li>
+                        ARIA Authoring Practices Guide, 'Patterns', 2024. [Online]. Available:https://www.w3.org/WAI/ARIA/apg/patterns/. [Accessed: August 20th, 2024]. 
+                    </li>
+                    <li>
+                        ARIA Authoring Practices Guide, 'No ARIA is better than Bad ARIA', 2024. [Online]. Available:https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/. [Accessed: August 20th, 2024]. 
+                    </li>
+                    <li>
+                        C. Coyier, 'Some Hands-On with the HTML Dialog Element', 2019. [Online]. Available:https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/. [Accessed: August 30th, 2024]. 
+                    </li>
+                    <li>
+                        ChatGPT, 'Phasmophobia Game Overview', 2024. [Online]. Available:https://chatgpt.com/. [Accessed: August 29th, 2024 at 13:58]. 
+                    </li>
+                    <li>
+                        J. Rhea, 'Quoting in HTML: Quotations, Citations, and Blockquotes', 2019. [Online]. Available:https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/. [Accessed: August 30th, 2024]. 
+                    </li>
+                    <li>
+                        Kinetic Games, 'Phasmophobia', 2024. [Online]. Available:https://www.kineticgames.co.uk/phasmophobia. [Accessed: September 8th, 2024]. 
+                    </li>
+                    <li>
+                        MDN Web Docs, 'HTML: HyperText Markup Language', 1998–2024. [Online]. Available:https://developer.mozilla.org/en-US/docs/Web/HTML. [Accessed: August 20th, 2024]. 
+                    </li>
+                    <li>
+                        MDN Web Docs, 'Javascript', 1998–2024. [Online]. Available:https://developer.mozilla.org/en-US/docs/Web/JavaScript. [Accessed: August 20th, 2024]. 
+                    </li>
+                    <li>
+                        MDN Web Docs, 'Javascript', 1998–2024. [Online]. Available:https://developer.mozilla.org/en-US/docs/Web/JavaScript. [Accessed: August 20th, 2024]. 
+                    </li>
+                    <li>
+                        Unsplash. [Online]. Available:https://unsplash.com/. [Accessed: August 20th, 2024]. 
+                    </li>
+                </ul>
+            <p>I had ChatGPT generate the blog post on <time datetime="2034-08-29T13:58Z"> August 29th, 2024 at 13:58</time>. The prompt was as follows: <em>Write a blog post about a Phasmophobia Wraith</em></p>
+            <p>Ghost evidence and descriptions are inspired by Kinetic Games' Phasmophobia.</p>
             <a id="appendices"><h2>Appendices</h2></a>
             <blockquote>Site map (if useful), wireframes and mock-ups</blockquote>
             <ul>
-                <li>Home</li>
-                <li>About</li>
+                <li><a href="./index.html">About</a></li>
+                <li><a href="./cases.html">Case Reports</a></li>
                 <ul>
-                    <li>Accreditation</li>
-                    <li>Example Case</li>
-                    <li>Testimonals</li>
+                    <li><a href="./cases/000001.html">Individual Case</a></li>
                 </ul>
-                <li>Case Reports</li>
+                <li><a href="./blog.html">Blog</a></li>
                 <ul>
-                    <li>Individual Case</li>
-                    <dl>
-                        <dt>Case title</dt>
-                        <dd>Case address/date</dd>
-                        <dd>Link to case report</dd>
-                        <dd>Evidence presented</dd>
-                        <dd>Ghost type</dd>
-                    </dl>
+                    <li><a href="./blog/ghost-guide-wraith.html">Individual Blog</a></li>
                 </ul>
-                <li>Blog</li>
-                <ul>
-                    <li>Ghost types</li>
-                    <li>Common signs</li>
-                    <li>Example Case</li>
-                </ul>
-                <li>Quick ID</li>
+                <li><a href="./quickID.html">Quick ID</a></li>
             </ul>
+            <h3>Wireframes</h3>
+            <img src="./assets/img/wireframes-1.png" alt="Wireframe of the About page">
+            <img src="./assets/img/wireframes-2.png" alt="Wireframe of the Cases page">
+            <img src="./assets/img/wireframes-3.png" alt="Wireframe of the Blog page">
+            <img src="./assets/img/wireframes-4.png" alt="Wireframe of a Case Report">
+            <img src="./assets/img/wireframes-5.png" alt="Wireframe of the Quick ID page">
+            <h3>Other</h3>
             <a href="https://toolness.github.io/accessible-color-matrix/?n=highlight&n=white&n=low%20contrast&n=high%20contrast&n=alt%20high%20contrast&n=black&v=E2EF70&v=EBF5EE&v=B9BAA3&v=37392E&v=421821&v=0A100D" target="_blank">Colour Palette</a>
-            <img src="assets/accessible-color-matrix.png" alt="A matrix of the suggested colour palette and their AA accessibile combinations" loading="lazy">
-            <figure class="polaroid">
-                <img src="assets/jeniak.jpg" alt="Example ghost hunting equipment, visual inspiration" loading="lazy"/>
-                <figcaption>Phasmaphobia fan art by Jeniak</figcaption>
-              </figure>
+            <img src="./assets/img/accessible-color-matrix.png" alt="A matrix of the suggested colour palette and their AA accessible combinations" loading="lazy">
               <figure>
                 <div class='ghost-a'>fig. a</div>
                 <div class='ghost-b'>fig. b</div>
-                <figcaption>Some 'Single Div' ghost designs I created for the site, inspired by Lynn Fisher's 2022.09.08 #divtober entry</figcaption>
+                <figcaption>Some 'Single Div' ghost designs I created for the site but didn't end up using. Inspired by Lynn Fisher's 2022.09.08 #divtober entry</figcaption>
               </figure>
         </article>
     </main>

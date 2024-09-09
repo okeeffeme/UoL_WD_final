@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Case Reports">
+    <meta name="keywords" content="ghosts, case, reports, GIGS, Nancy Ghoul">
+    <meta name="author" content="Nancy Ghoul">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nancy Ghoul | Blog</title>
+    <!-- Code from fonts.google.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- End code from fonts.google.com -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="./assets/js/menu.js"></script>
+    <script>
+        handleMenu();
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <h2>Nancy Ghoul</h2>
+        </a>
+        <nav id="main-menu">
+            <ul role="menu" id="main-menu-list" class="mobile-hidden">
+                <li role="none" class="mobile-only"><a role="menuitem" href="../index.html">Main</a></li>
+                <li role="none"><a role="menuitem" href="../index.html">About</a></li>
+                <li role="none"><a role="menuitem" href="../cases.html">Case Reports</a></li>
+                <li role="none"><a role="menuitem" href="../blog.html">Blog</a></li>
+                <li role="none"><a role="menuitem" href="../quickID.html">Quick ID</a></li>
+                <li role="none"><button id="dialog-open" onclick="window.contact.showModal()">Contact</button></li>
+            </ul>
+            <button class="menu-toggle mobile-only" id="main-menu-toggle">Menu</button>
+        </nav>
+    </header>
+    <!-- Contact dialog -->
+    <dialog id="contact" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <h2 id="dialog-title">Do you need help with a haunting?</h2>
+        <p id="dialog-description">
+            In order to correctly prioritise hauntings, please consider if you need immediate attention. <br> If you're
+            unsure about the severity of your case, please consult the <a href="../quickID.html">Quick ID Tool</a>.</p>
+        <p>For immediate assistance, call: <a href="tel:+0000000000">000-00-000</a>
+        </p>
+        <p>For lower priority hauntings, please email: <a href="mailto:NancyGhoul@GIGS.com">NancyGhoul@GIGS.com</a> </p>
+        <button id="dialog-close" onclick="window.contact.close()" autofocus>Close</button>
+    </dialog>
+    <!-- End contact dialog -->    
+     <div class="page-title">
+        <h1 id="000001">Case Number: #000001</h1>
+        <h2><time datetime="2034-01-04">January 4th, 2034</time>
+            <br> Sunny Meadows Mental Institution</h2>
+    </div>
+    <main class="post">
+        <!-- Table of contents -->
+        <aside>
+            <h2 id="toc">Table of contents</h2>
+            <nav aria-labelledby="toc">
+                <a href="#1">Initial Complaint</a>
+                <a href="#2">Investigation</a>
+                <a href="#3">Evidence</a>
+                <a href="#5">Identificiation</a>
+                <a href="#6">Followup</a>                
+            </nav>
+        </aside>
+    <!-- Start of case -->
+    <article class="post" aria-labelledby="000001">
+        <h2>GIGS Mandated Reporter #0076551</h2>
+        <section id="1">
+        <h2>Initial Complaint</h2>
+        <h3>Made by: Patterson Brown (Caretaker)</h3>
+        <h3>Date: <time datetime="2033-12-29">December 29th, 2033</time></h3>
+        <h4>Notes:</h4>
+        <p>Caretaker has noticed active haunting signs: objects moving without obvious interaction, unexplained noises, temperature drop in entrance despite warm weather. Events have persisted for one month, but no escalation has been noticed. One month stipulation on grounds insurance has prevented previous identification.</p>
+        <p>Grounds has a known history of patients with mental health issues; unclear if any patients in particular have ghost-related trauma. No recent deaths or violent incidents. Likely transient ghost or moved remains.</p>
+    </section>
+    <section id="2">
+        <h2>Investigation</h2>
+        <h3>Lead Investigator: Nancy Ghoul #0076551</h3>
+        <h3>Date: <time datetime="2034-01-04T23:58Z">August 29th, 2034 at 23:58</time></h3>
+        <h4>Notes</h4>
+        <p>Strong haunting signs present upon entering grounds. Hauntings seemed to take place largely in entrance, further inspection indicated protective behaviour around courtyard. Remains discovered under newly planted landscaping, local police have been notified. Remains have been handed over to mortuary for identification to assist eradication and criminal proceedings.</p>
+        <h4 id="3">Evidence</h4>
+        <ol>
+            <li>Ghost Writing</li>
+            <li>Ultraviolet Light</li>
+            <li>Spirit Box</li>
+        </ol>
+        <h4>Events</h4>
+        <ul>
+            <li>Multiple items thrown, strong poltergeist trait</li>
+            <li>Blue light event</li>
+            <li>Several mock hunts</li>
+            <li>One singing event, low humming</li>
+        </ul>
+        <!-- All photos should have their own figure with credit -->
+        <h4>Photos</h4>
+        <figure class="polaroid">
+            <img src="../assets/img/alex-mihu-unsplash.jpg" alt="Ghost handprint" loading="lazy">
+            <figcaption>Ghost handprint left on window. Credit: Alex Mihu</figcaption>
+        </figure>
+        <figure class="polaroid">
+            <img src="../assets/img/mario-ame-unsplash.jpg" alt="Remains in dirt" loading="lazy">
+            <figcaption>Remains. Credit: Mario Ame</figcaption>
+        </figure>
+        <figure class="polaroid">
+            <img src="../assets/img/filip-steficar-unsplash.jpg" alt="Blue light in hallway" loading="lazy">
+            <figcaption>Ghost event, type: blue light. Credit: Filip Steficar</figcaption>
+        </figure>
+        <figure class="polaroid">
+            <img src="../assets/img/zanyar-ibrahim-unsplash.jpg" alt="Shadow figure illuminated by blue light" loading="lazy">
+            <figcaption>Ghost appearance. Credit: Zanyar Ibrahim</figcaption>
+        </figure>
+    </section>
+    <section id="4">
+        <h2>Identification</h2>
+        <h4>Type: Poltergeist</h4>
+        <h4>Identification number: PG001304</h4>
+    </section>
+    <section id="5">
+        <h2>Followup</h2>
+        <h4>Handoff team: Impulse Cleaning Services #0115447</h4>
+        <h4>Eradication status: In Progress</h4>
+    </section>
+    </article>
+    <!-- End of case -->
+</main>
+<div class="page-turn">
+    <a href="./000001.html">Previous</a> <!-- Prev. Case -->
+    <a href="./000001.html">Next</a> <!-- Next Case -->
+</div>
+<footer>
+    <h4>Copyright © 2034 Nancy Ghoul</h4>
+    <a href="../report.html">Report</a>
+</footer>
+</body>
+</html>
