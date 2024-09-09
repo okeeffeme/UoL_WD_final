@@ -194,7 +194,7 @@ li > :is(h3, h4):has(+ p, + a), li a > :is(h3, h4, p) {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        background-color: var(--c-white);
+        background-color: var(--c-lowcontrast);
     }
   }
 
